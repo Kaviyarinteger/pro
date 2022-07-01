@@ -12,10 +12,9 @@ st.sidebar.markdown("Inventory And Product Performance")
 
 
 DATA_URL = ("https://docs.google.com/spreadsheets/d/e/2PACX-1vRffwlmhiARpcl03gaG07TDMbFCbjJOdFpOkscij4-CPIwzNCiQdwC8TsxBjKjN6zV3BUraUDjxUC0p/pub?gid=1604835951&single=true&output=csv")
-#DATA_URL_1 = ("https://docs.google.com/spreadsheets/d/e/2PACX-1vShThnh_A7EQokSMvs1MKzDDzpZp13tOI2d9AjSGoxYgVYOcpgkwqhQD0tQT5pR8M3gOx7YZn9lS4Tr/pub?gid=995490562&single=true&output=csv")
-#st.DATA_URL
-#data=load
-st.write(DATA_URL)
-#Bar Chart
-#st.bar_chart(DATA_URL["Reach"])
-#st.bar_chart(DATA_URL["Platform"])
+
+@st.cache(persist=True)
+    data = pd.read_csv(DATA_URL)
+
+data = load_data()
+st.write(data)
