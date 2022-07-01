@@ -14,7 +14,6 @@ st.sidebar.markdown("Inventory And Product Performance")
 DATA_URL = ("https://docs.google.com/spreadsheets/d/e/2PACX-1vRffwlmhiARpcl03gaG07TDMbFCbjJOdFpOkscij4-CPIwzNCiQdwC8TsxBjKjN6zV3BUraUDjxUC0p/pub?gid=1604835951&single=true&output=csv")
 
 @st.cache(persist=True)
-    data = pd.read_csv(DATA_URL)
-
+data = pd.read_csv(DATA_URL)
 data = load_data()
 st.write(data)
