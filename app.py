@@ -19,4 +19,5 @@ bar_chart = plt.Chart(data).mark_bar().encode(
         y='Inventory Quantity:Q',
         x='Title:O',
     )
+
 st.altair_chart(bar_chart, use_container_width=True)
